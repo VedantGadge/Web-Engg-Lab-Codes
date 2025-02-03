@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>AAA Gaming Hub</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ background: linear-gradient(to bottom, #2c3e50, #1a252f);
+ color: white;
+ }
+ header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 15px;
+ background: #111;
+ border-bottom: 5px solid red;
+ position: relative;
+ }
+ .logo-container img {
+ height: 60px;
+ }
+ .title {
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%);
+ font-size: 24px;
+ font-weight: bold;
+ }
+ nav a {
+ color: white;
+ text-decoration: none;
+ margin: 0 15px;
+ font-weight: bold;
+}
+ nav a:hover {
+ color: red;
+ }
+ main {
+ padding: 20px;
+ display: flex;
+ flex-direction: column;
+ }
+ .content {
+ display: flex;
+ flex-wrap: wrap;
+ }
+ section, article {
+ background: #222;
+ padding: 15px;
+ border-radius: 10px;
+ box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+ margin: 10px;
+ }
+ .sections {
+ flex: 2;
+ display: flex;
+ flex-direction: column;
+ }
+ aside {
+ background: #111;
+ color: white;
+ padding: 10px;
+ border-radius: 5px;
+ margin-top: 10px;
+ }
+ .wide {
+ flex: 3;
+ }
+ .narrow {
+ flex: 1;
+ }
+ footer {
+ background: #111;
+ color: white;
+ display: flex;
+ justify-content: space-between;
+ padding: 15px;
+ border-top: 5px solid red;
+ }
+ .footer-left nav a {
+ color: red;
+ }
+ </style>
+</head>
+<body>
+ <header>
+ <div class="logo-container">
+ <img src="games.webp" alt="AAA Gaming Hub Logo">
+ </div>
+ <div class="title">AAA Gaming Hub</div>
+ <nav>
+ <a href="#">LATEST RELEASES</a> |
+ <a href="#">REVIEWS</a> |
+ <a href="#">NEWS</a>
+ </nav>
+ </header>
+ <main>
+ <div class="content">
+ <div class="sections wide">
+ <section>
+ <h2>Top AAA Titles</h2>
+ <p>Explore the latest and greatest AAA games, from action-packed shooters to open-world adventures.</p>
+ </section>
+ <section>
+ <h2>Upcoming Releases</h2>
+ <p>Stay updated on the most anticipated games coming soon to PC and consoles.</p>
+ </section>
+ <section>
+ <h2>Game Reviews</h2>
+ <p>Read in-depth reviews and ratings from top gaming critics and players.</p>
+ </section>
+ <section>
+ <h2>Gaming Accessories</h2>
+ <p>Find the best controllers, keyboards, and gaming peripherals to enhance your experience.</p>
+ </section>
+ </div>
+ <article class="narrow">
+ <h2>Player Spotlights</h2>
+ <p>"The most immersive gaming experience! Can't get enough of these titles!" - Alex G.</p>
+ <aside>
+ <h3>What the Critics Say</h3>
+ <p>"AAA Gaming Hub is the go-to platform for every hardcore gamer." - Game Insider</p>
+ </aside>
+ </article>
+ <article class="narrow">
+ <h2>Industry Trends</h2>
+ <p>The gaming industry is evolving fast with next-gen graphics, AI-driven NPCs, and new multiplayer experiences.</p>
+ <aside>
+ <p>Stay informed about gaming innovations and trends shaping the future.</p>
+ </aside>
+ </article>
+ </div>
+ </main>
+ <footer>
+ <div class="footer-left">
+ <nav>
+ <a href="#">JOBS</a> |
+ <a href="#">CONTACT</a> |
+ <a href="#">LEGAL</a> |
+ <a href="#">FOLLOW US</a>
+ </nav>
+ </div>
+ <p>&copy; 2025 AAA Gaming Hub</p>
+ </footer>
+</body>
+</html>
