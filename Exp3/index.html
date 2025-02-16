@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Form</title>
+
+    <style>
+        .error {
+            color: rgba(255, 0, 0, 0.683);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container mx-auto my-20 p-2 shadow-gray-400 shadow-md w-80 bg-gradient-to-bl from-blue-400 to-teal-400 rounded-[7px] text-white">
+            <p class="flex justify-center font-semibold font-sans">
+                Sign Up
+            </p>
+            <br>
+            <form id="myForm">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm opacity-80">Name</label>
+                    <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow focus:border-blue-100 focus:ring-2 focus:ring-blue-300 focus:outline-none text-gray-600 placeholder-gray-400 px-2 hover:shadow-xl">
+                    <span id="nameError" class="error"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-sm opacity-80">Email</label>
+                    <input type="text" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow focus:border-blue-100 focus:ring-2 focus:ring-blue-300 focus:outline-none text-gray-600 placeholder-gray-400 px-2 hover:shadow-xl">
+                    <span id="emailError" class="error"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="block text-sm opacity-80">Password</label>
+                    <input type="password" id="password" name="password" class="mt-1 block w-full border border-gray-300 rounded-md shadow focus:border-blue-100 focus:ring-2 focus:ring-blue-300 focus:outline-none text-gray-600 placeholder-gray-400 px-2 hover:shadow-xl">
+                    <span id="passwordError" class="error"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="confirmPassword" class="block text-sm opacity-80">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="mt-1 block w-full border border-gray-300 rounded-md shadow focus:border-blue-100 focus:ring-2 focus:ring-blue-300 focus:outline-none text-gray-600 placeholder-gray-400 px-2 hover:shadow-xl">
+                    <span id="confirmPasswordError" class="error"></span>
+                </div>
+
+                <button type="submit" class="block mx-auto bg-sky-500 shadow shadow-sm shadow-sky-500/50 text-white px-4 py-2 rounded-md">Submit</button>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById('myForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                let isValid = true;
+
+                // Name validation
+                const name = document.getElementById('name').value;
+                const nameError = document.getElementById('nameError');
+                if (name === '') {
+                    nameError.textContent = 'Name is required';
+                    isValid = false;
+                } else {
+                    nameError.textContent = '';
+                }
+
+                // Email validation
+                const email = document.getElementById('email').value;
+                const emailError = document.getElementById('emailError');
+                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if (email === '') {
+                    emailError.textContent = 'Email is required';
+                    isValid = false;
+                } else if (!email.match(emailPattern)) {
+                    emailError.textContent = 'Invalid email address';
+                    isValid = false;
+                } else {
+                    emailError.textContent = '';
+                }
+
+                // Password validation
+                const password = document.getElementById('password').value;
+                const passwordError = document.getElementById('passwordError');
+                if (password.length < 8) {
+                    passwordError.textContent = 'Password must be at least 8 characters long';
+                    isValid = false;
+                } else {
+                    passwordError.textContent = '';
+                }
+
+                // Confirm Password validation
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const confirmPasswordError = document.getElementById('confirmPasswordError');
+                if (confirmPassword !== password) {
+                    confirmPasswordError.textContent = 'Passwords do not match';
+                    isValid = false;
+                } else {
+                    confirmPasswordError.textContent = '';
+                }
+
+                console.log('Form validation status:', isValid);
+                if (isValid) {
+                    alert('Form submitted successfully!');
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>
