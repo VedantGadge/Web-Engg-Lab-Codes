@@ -1,6 +1,6 @@
 function helloall(){
     console.log("Hello, World!");
-    return 'Reporting froom Hello.js'
+    return 'Reporting from Hello.js'
 }
 
 export default helloall;
